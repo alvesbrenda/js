@@ -1,1 +1,3 @@
-# js
+# HTML e CSS
+# JavaScript
+# Jquery
