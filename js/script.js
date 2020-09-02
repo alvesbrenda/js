@@ -195,7 +195,6 @@ console.log(objeto["objeto2"]["vetor"][2].valor); // deu bom
 console.log("-------");
 console.log("-------");
 
-
 function revisao(valor1, valor2, valor3) {
     let outroValor = valor1 + 2;
     let maisUm = valor2 + valor3;
@@ -225,9 +224,9 @@ funcaoDeSomar2(2, -5);
 console.log("-------");
 
 //Crir um vetor chamado listaMista
-
 let listaMista = [50, "mundo", true, { teste: "Testando" }];
 console.log(listaMista[0], listaMista[1], listaMista[2], listaMista[3])
+console.log("-------");
 
 // 4 - Condições 
 // 2.1 
@@ -254,7 +253,6 @@ if (nome == "Maria") {
 console.log("-------");
 
 //Código meio confuso e "ruim" visualmente
-
 let cidade = "Cidade?"
 if (cidade == "Porto Alegre") {
     console.log("Aqui é Porto Alegre");
@@ -291,16 +289,18 @@ if (num == 1) {
 // erro de escopo
 //console.log(text); 
 // chamando variavel não-global * retorna erro.
+console.log("-------");
 
 //Modelo função Global
-let value = 12;
-let umaFuncao = function() {
+let value = 12; //Global _ todo mundo tem acesso.
+function umaFuncao() {
     console.log(value);
 }
 if (value == 12) {
     umaFuncao();
     console.log(value);
 }
+console.log("-------");
 
 //escopo de bloco
 let varGlobal = 1;
@@ -313,4 +313,196 @@ function funcaoGlobal() {
         console.log(varFuncLocal);
 
     }
+}
+console.log("-------");
+
+//Var escopo global e bloco pra funções
+let x1 = 1;
+if (x1 == 1) {
+    var y1 = 99;
+}
+//Funciona
+console.log(y1);
+console.log("-------");
+
+let x2 = 1;
+if (x2 == 1) {
+    let y2 = 99;
+}
+//Retorna erro devido a foma que foi declarado (let)
+//console.log(y2);
+console.log("-------");
+
+//Aula 23 
+// se houver muitos if/else, use switch
+let codigo;
+switch (codigo) {
+    case 1:
+        console.log("Banana");
+        break; //Encerra leitura
+    case 2:
+        console.log("Limão");
+        break;
+    default: // "Else" executa quando não entrar em nenhum "Case"
+        console.log("Desconhecido");
+        break;
+}
+console.log("-------");
+
+let cod = "0";
+switch (cod) {
+    case 0:
+        console.log("zero");
+        break;
+    case 1:
+        console.log("um");
+        break;
+    default:
+        console.log("n/a");
+        break;
+}
+console.log("-------");
+console.log("-------");
+
+//24 - Revisão
+let simb1 = "R$";
+let simb2 = "$";
+let simb3 = "£";
+//Escreva a função que receberá um simbolo de moeda
+// como parâmetro e retornará o nome dela
+// caso conheça aquele simbolo
+// senão, retornar "Moeda não encontrada"
+//Switch Case
+function moeda(simb) {
+    switch (simb) {
+        case "R$":
+            console.log("Real");
+            break;
+        case "$":
+            console.log("Dólar");
+            break;
+        case "£":
+            console.log("Libra");
+            break;
+        default:
+            console.log("Moeda não encontrada!");
+            break;
+    }
+}
+//If Else
+function moeda1(simb) {
+    if (simb == "R$") {
+        console.log("Real");
+    } else if (simb == "$") {
+        console.log("Dólar");
+    } else if (simb == "£") {
+        console.log("Libra");
+    } else {
+        console.log("Moeda não encontrada!");
+    }
+}
+console.log("-------");
+console.log("-------");
+
+let objServidor = {
+    acesso: true,
+    login: "mundojs"
+};
+let objServidor2 = {
+    erro: "Erro ao conectar ao servidor"
+};
+//Caso o objeto não contenha erro,
+//validar se o acesso é permitido
+//se permitido exiba "login: mundojs"
+//senão escreva "acesso negado"
+//caso dê erro, exiba a msg de erro
+function conexaoLogin(retornoServidor) {
+    if (retornoServidor.erro == null) {
+        if (retornoServidor.acesso) {
+            console.log(`login: ${retornoServidor.login}`);
+        } else {
+            console.log("Acesso negado!");
+        }
+    } else {
+        console.log(retornoServidor.erro);
+    }
+}
+console.log("-------");
+console.log("-------");
+
+function testarTamanho(valor) {
+    let num = 25; // Seu código aqui
+    // Dica: Utilize o IF/ELSE
+    if (num > 15) {
+        return "maior";
+        console.log("maior");
+    } else if (num < 3) {
+        return "menor";
+        console.log("menor");
+    } else if (num >= 3 && num == 15) {
+        return "na faixa";
+        console.log("na faixa");
+    }
+}
+console.log("-------");
+console.log("-------");
+
+//Exercício 25 - Multiplas opções
+// Este objeto não precisa ser mexido
+let carro = {
+    rodas: 4,
+    portas: 2,
+    cor: "cinza",
+    ano: 2012,
+    estado: "novo"
+};
+
+function mudarPropriedade(nomePropriedade, novoValor) {
+    switch (nomePropriedade) {
+        // O case rodas é um exemplo para as próximas partes
+        case "rodas":
+            if (novoValor > 1) {
+                carro.rodas = novoValor;
+            } else {
+                return "Minimo de rodas precisa ser 2";
+            }
+            break;
+        case "portas":
+            // Para alterar as portas, é necessário que o
+            // novo valor seja maior que 0
+            // senão deve retornar a string "Minimo de portas precisa ser 1"
+            if (novoValor > 0) {
+                carro.portas = novoValor;
+            } else {
+                return "Mínimo de portas precisa ser 1";
+            }
+            break;
+        case "cor":
+            // para alterar a cor, novo valor pode ser igual a cinza ou preto ou vermelho
+            // se for diferente, retornar "Cor invalida"        
+            if (novoValor == "cinza" || novoValor == "preto" || novoValor == "vermelho") {
+                carro.cor = novoValor;
+            } else {
+                return "Cor invalida";
+            }
+            break;
+        case "ano":
+            // criar um case para o "ano"
+            // alterar o ano do carro para o ano informado
+            // se o ano for igual a 2019, alterar o estado para "novo" 
+            // senao alterar o estado para "usado"
+            carro.ano = novoValor;
+            if (novoValor == 2019) {
+                carro.estado = "novo";
+            } else {
+                carro.estado = "usado";
+            }
+            break;
+        default:
+            // retornar a fraase "Propriedade invalida";
+            return "Propriedade inválida";
+    }
+    // retornar a frase Alteracao concluida somente se foi possivel
+    // alterar um dado do objeto.
+    return "Alteracao concluída";
 }
