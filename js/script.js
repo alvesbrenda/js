@@ -506,3 +506,93 @@ function mudarPropriedade(nomePropriedade, novoValor) {
     // alterar um dado do objeto.
     return "Alteracao concluída";
 }
+console.log("-------");
+console.log("-------");
+
+//Aula 27 - Loops
+//Informa os valores de 0 a 9
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+//Informa os valores do vetor
+let lista = ["gato", "cachorro", "galinha"];
+for (let i = 0; i < lista.length; i++) {
+    console.log(lista[i]);
+}
+
+//Dobra os valores do vertor
+let valores = [1, 2, 3, 4, 5];
+for (let i = 0; i < valores.length; i++) {
+    valores[i] = valores[i] * 2;
+    console.log(valores[i]);
+}
+console.log("-------");
+console.log("-------");
+
+//Aula 29 - For of
+let dias = ["segunda", "terça", "quarta", "quinta", "sexta"];
+
+for (let dia of dias) {
+    console.log(dia);
+}
+
+for (let num of[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) {
+    console.log(num);
+}
+console.log("-------");
+console.log("-------");
+
+//Aula 27 - Loops
+//Informa os valores de 0 a 9
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+//Informa os valores do vetor
+let lista = ["gato", "cachorro", "galinha"];
+for (let i = 0; i < lista.length; i++) {
+    console.log(lista[i]);
+}
+
+//Dobra os valores do vertor
+let valores = [1, 2, 3, 4, 5];
+for (let i = 0; i < valores.length; i++) {
+    valores[i] = valores[i] * 2;
+    console.log(valores[i]);
+}
+console.log("-------");
+console.log("-------");
+
+
+//Aula 29 - For of
+let dias = ["segunda", "terça", "quarta", "quinta", "sexta"];
+
+for (let dia of dias) {
+    console.log(dia);
+}
+
+for (let num of[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) {
+    console.log(num);
+}
+console.log("-------");
+console.log("-------");
+
+
+//Aula 30 - While
+let num = 1;
+while (num < 10) {
+    console.log("valor: " + num);
+    num = num + 2;
+}
+/*
+Loop sem fim comentado
+let num1 = 1;
+while (num1 < 10) {
+    let valor = 0;
+    console.log("valor: " + valor);
+    valor = valor + 2;
+}
+*/
+console.log("-------");
+console.log("-------");
