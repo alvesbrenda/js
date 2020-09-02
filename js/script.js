@@ -596,3 +596,137 @@ while (num1 < 10) {
 */
 console.log("-------");
 console.log("-------");
+
+// Do While
+let contador = 1;
+do {
+    console.log(contador);
+    contador++;
+}
+while (contador < 10);
+
+// Loops -> break
+let = cont = 1;
+while (cont < 10) {
+    console.log(cont);
+    if (cont == 6) {
+        break;
+    }
+    cont++;
+}
+console.log("-------");
+//Ou
+
+for (let contt of[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+    console.log(contt);
+    if (contt == 5) {
+        break;
+    }
+}
+console.log("-------");
+console.log("-------");
+
+// Loops -> continue
+for (let contt of[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+    if (contt == 3 || contt == 5 || contt == 7) {
+        continue;
+    }
+    console.log(contt);
+}
+console.log("-------");
+console.log("-------");
+
+// ** Exercícios
+let alunos = [{
+            nome: "Maria",
+            nota: 8
+        },
+        {
+            nome: "Pedro",
+            nota: 4
+        },
+        {
+            nome: "João",
+            nota: 10
+        },
+        {
+            nome: "Paulo",
+            nota: 9
+        },
+        {
+            nome: "Ana",
+            nota: 7
+        },
+        {
+            nome: "Bianca",
+            nota: 6
+        },
+    ]
+    //Escreva um loop que percorra o vetor acima
+    // Informe se o aluno passou
+    // Condição para passar: nota > 7
+
+for (let aluno of alunos) {
+    if (aluno.nota > 7) {
+        console.log(`${aluno.nome}: Passou!`);
+        //TODO: Entender (`${...: ...})
+    }
+}
+console.log("-------");
+
+// length -> tamanho do vetor = 6
+for (let i = 0; i < alunos.length; i++) {
+    if (alunos[i].nota > 7) {
+        console.log(`${alunos[i].nome}: Passou!`);
+    }
+}
+console.log("-------");
+console.log("-------");
+
+//TODO: Fibonacci
+
+// ** Exercício
+// Escreva uma função que receberá valor "n" e percorrerá um loop
+// para exibir no console o valor "N" da sequencia de fibonacci
+// fibonacci: 0,1,1,2,3,5,8..
+// o numero é igual a soma dos dois anteriores
+
+//exemplo fibonacci(0) -> 0
+//exemplo fibonacci(1) -> 1
+//exemplo fibonacci(6) -> 8
+
+function fibonacci(n) {
+    if (n < 2) {
+        return n;
+    }
+    let anterior = 1;
+    let penultimo = 0;
+    //Incia na posição 2 - (0 e 1 já foi tratado no "if")
+    for (let i = 2; i <= n; i++) {
+        if (i == n) {
+            return penultimo + anterior;
+        }
+        let temp = penultimo;
+        penultimo = anterior;
+        anterior = temp + penultimo;
+    }
+}
+
+function fibonacci2(n) {
+    if (n < 2) {
+        return n;
+    }
+    let posicao = 2;
+    anterior = 1;
+    penultimo = 0;
+
+    while (true) {
+        if (posicao == n) {
+            return penultimo + anterior;
+        }
+        let temp = penultimo;
+        penultimo = anterior;
+        anterior = temp + penultimo;
+        posicao++;
+    }
+}
