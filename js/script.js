@@ -228,3 +228,89 @@ console.log("-------");
 
 let listaMista = [50, "mundo", true, { teste: "Testando" }];
 console.log(listaMista[0], listaMista[1], listaMista[2], listaMista[3])
+
+// 4 - Condições 
+// 2.1 
+let x = 1;
+if (x = 1) {
+    //Executa o código
+}
+console.log("-------");
+
+let disponivel = true;
+let quantidade = 5;
+if (quantidade > 0 && disponivel) {
+    console.log("Produto disponível para venda.")
+}
+console.log("-------");
+
+//let nome = "João"
+let nome = "Maria"
+if (nome == "Maria") {
+    console.log("Acesso permitido")
+} else {
+    console.log("Acesso Negado!")
+}
+console.log("-------");
+
+//Código meio confuso e "ruim" visualmente
+
+let cidade = "Cidade?"
+if (cidade == "Porto Alegre") {
+    console.log("Aqui é Porto Alegre");
+} else {
+    if (cidade == "São Paulo") {
+        console.log("São Paulo");
+    } else {
+        if (cidade == "Rio de Janeiro") {
+            console.log("Aqui é Rio de Janeiro");
+        }
+    }
+}
+console.log("-------");
+
+//Melhoria no código e visualmente melhor
+if (cidade == "Porto Alegre") {
+    console.log("Aqui é Porto Alegre");
+} else if (cidade == "São Paulo") {
+    console.log("São Paulo");
+} else if (cidade == "Rio de Janeiro") {
+    console.log("Aqui é Rio de Janeiro");
+} else {
+    console.log("Não sei onde é aqui");
+}
+console.log("-------");
+
+// Aula 22
+let num = 1;
+if (num == 1) {
+    let text = "Olá"; // declarando variavel nã0-global
+    //acessando variável número
+    num = 2;
+}
+// erro de escopo
+//console.log(text); 
+// chamando variavel não-global * retorna erro.
+
+//Modelo função Global
+let value = 12;
+let umaFuncao = function() {
+    console.log(value);
+}
+if (value == 12) {
+    umaFuncao();
+    console.log(value);
+}
+
+//escopo de bloco
+let varGlobal = 1;
+
+function funcaoGlobal() {
+    let varFuncao = varGlobal + 1;
+
+    function funcaoLocal() {
+        let varFuncLocal = varFuncao + varGlobal;
+        console.log(varFuncLocal);
+
+    }
+}
