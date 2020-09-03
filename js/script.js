@@ -730,3 +730,39 @@ function fibonacci2(n) {
         posicao++;
     }
 }
+console.log("-------");
+console.log("-------");
+
+//**Exercícios
+//A função abaixo receberá 2 parâmetros, 
+//um vetor com apenas valores numéricos e um número.
+function calcularVetor(vetor, numero) {
+    for (let i = 0; i < vetor.length; i++) {
+        if (vetor[i] > 5) {
+            vetor[i] = vetor[i] * numero;
+        }
+    }
+    return vetor;
+}
+console.log("-------");
+console.log("-------");
+
+//Outro exercício
+// [[1,1],[1,2,3],[0,1]];
+// [ 2  ,   6,      1]
+function somarSubVetores(vetor) {
+    let resultado = [];
+
+    for (let i = 0; i < vetor.length; i++) {
+        let subvetor = vetor[i];
+        let soma = 0;
+        for (let subI = 0; subI < subvetor.length; subI++) {
+            soma = soma + subvetor[subI];
+        }
+        resultado[i] = soma;
+        //vetor[i] = soma;
+    }
+    return resultado;
+}
+console.log("-------");
+console.log("-------");
